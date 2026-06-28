@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #6C4DE0;
+  --color-brand-dark: #5B3CD6;
+  --color-brand-soft: #EFEBFB;
+  --color-ink: #1E2230;
+  --color-body: #626B7E;
+  --color-carrot: #F26A1B;
+  --color-carrot-dark: #E15E12;
+
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-card: 0 1px 2px rgba(16, 24, 40, 0.04);
+  --shadow-soft: 0 8px 30px rgba(76, 57, 160, 0.08);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+}
+
+/* Soft lavender → white wash behind the hero, matching the design */
+.page-bg {
+  background:
+    radial-gradient(1100px 380px at 30% -8%, #efeafb 0%, rgba(239, 234, 251, 0) 60%),
+    radial-gradient(900px 340px at 92% -4%, #f1ecfc 0%, rgba(241, 236, 252, 0) 55%),
+    #fbfbfd;
+}
