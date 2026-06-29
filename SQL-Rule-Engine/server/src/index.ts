@@ -13,7 +13,8 @@ export function createApp() {
 
   app.use(
     cors({
-      origin: ["http://localhost:3000", "http://127.0.0.1:3000"],
+      // Allow requests from both the default Next.js port and the fallback port.
+      origin: ["http://localhost:3000", "http://localhost:3001", "http://127.0.0.1:3000", "http://127.0.0.1:3001"],
       credentials: true,
       allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"],
       methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
@@ -58,5 +59,5 @@ const app = createApp();
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`✅ Auth server running on http://localhost:${PORT}`);
 });

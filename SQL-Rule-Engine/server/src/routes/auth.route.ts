@@ -6,7 +6,7 @@ const router = Router();
 
 router.post("/register", asyncHandler(handleRegister));
 
-router.post("/login" ,asyncHandler(handleLogin));
+router.post("/login", asyncHandler(handleLogin));
 
 router.post("/refresh", asyncHandler(handleRefresh));
 

@@ -106,7 +106,7 @@ export const problems = pgTable(
     questionText: text("question_text").notNull(),
     difficulty: difficultyLevelEnum("difficulty").notNull(),
     isFree: boolean("is_free").notNull().default(false),
-    is_order_sensitive : boolean("is_order_sensitive").notNull().default(false),
+    isOrderSensitive: boolean("is_order_sensitive").notNull().default(false),
     createdAt: timestamp("created_at").notNull().defaultNow(),
   },
   (t) => [
@@ -296,8 +296,8 @@ export const attemptFeedback = pgTable("attempt_feedback", {
 export const authSessions = pgTable("auth_sessions", {
   id: uuid("id").primaryKey().defaultRandom(),
   userId: uuid("user_id")
-      .notNull()
-      .references(() => users.id, { onDelete: "cascade" }),
+    .notNull()
+    .references(() => users.id, { onDelete: "cascade" }),
   refreshToken: varchar("refresh_token", { length: 500 }).notNull(),
   createdAt: timestamp("created_at").notNull().defaultNow(),
 });
